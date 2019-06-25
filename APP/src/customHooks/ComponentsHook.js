@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import axios from 'axios';
+import {apiComponentUrl } from '../api';
 
 function useComponents(){
 
@@ -35,7 +36,7 @@ function useComponents(){
 
     const getComponents = async () =>{
         try{
-            const res = await axios('http://localhost:3000/api/components')
+            const res = await axios(apiComponentUrl)
             buildCptArray( res.data.components[0] )
             setRender(true)
         } catch(err){

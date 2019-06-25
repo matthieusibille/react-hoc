@@ -5,7 +5,6 @@ import Form from './components/Form';
 
 import useComponents from './customHooks/ComponentsHook'    
 import Users from './hoc/Users';
-import SomeComponent from './hoc/SomeComponent';
 
 export function App() {
 
@@ -19,7 +18,6 @@ export function App() {
         <div className="layout"> 
            {render && <Form data={components} /> }
            <Users data="some props"/>
-           <SomeComponent />
         </div>
     )
 

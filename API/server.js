@@ -1,18 +1,16 @@
 var express    = require('express');
 var bodyParser = require('body-parser');
 var app        = express();
-var morgan     = require('morgan');
 var cors = require('cors');
 
 var components = require('./components.json');
-var users      = require('./users.json');
-app.use(morgan('dev')); 
+var users      = require('./users.json'); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var corsOptions = {
-	origin: 'http://localhost:3006',
+	origin: 'http://localhost:4000',
 	optionsSuccessStatus: 200,
 	credentials: true 
   }
@@ -27,7 +25,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-	res.json({ message: 'API started' });	
+	res.send('API OK');	
 });
 
 router.route('/components')

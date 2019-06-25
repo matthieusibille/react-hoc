@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import * as _ from 'lodash';
 import Axios from 'axios';
+import {apiUserUrl } from '../api'
 
 function useForm(state){
 
@@ -67,7 +68,7 @@ function useForm(state){
 
     const getResults = async () =>{
         try{
-            const res = await Axios.get('http://localhost:3000/api/users')
+            const res = await Axios.get(apiUserUrl)
             search(res.data)
         }catch(err){
             throw Error(err)
